@@ -1,0 +1,25 @@
+{
+  "name": "nottindom",
+  "version": "1.0.0",
+  "description": "A semester-end project for the class of CE-325 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kowais915/ce325-semester-project.git"
+  },
+  "author": "Owais Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kowais915/ce325-semester-project/issues"
+  },
+  "homepage": "https://github.com/kowais915/ce325-semester-project#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.2",
+    "nodemon": "^2.0.16"
+  }
+}
