@@ -7,3 +7,6 @@ app.listen('3000', ()=>{
     console.log("Listening to requests at 3000");
 });
 
+
+//routes
+
