@@ -4,6 +4,8 @@ const keys = require('./keys')
 const app = express();
 const facebookAuth = require('./config/passportFacebook');
 const googleAuth = require('./config/passportGoogle.js');
+const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileAuths');
 const PORT = 3000;
 
 app.set('view engine', 'ejs');
@@ -25,10 +27,18 @@ app.get("/", (req, res)=>{
     res.render('login');
 })
 
-//facebook routes
+//Auth routes
+app.get('/auth', authRoutes );
 
-//google routes
+
 
 //profile routes
+app.get('/profile', profileRoutes);
 
+
+//404
+
+app.use((req, res)=>{
+    res.status(404).send("404 - Wrong Page");
+});
 

@@ -3,4 +3,19 @@
 }
 .btns > li > a{
     margin: 4px;
+    
+}
+
+#card-container{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+.card{
+    text-align: center;
+    padding: 30px;
+}
+
+.card > div > a{
+    margin: 5px;
 }
