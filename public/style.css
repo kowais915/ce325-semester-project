@@ -1,0 +1,6 @@
+.btns{
+    display: flex;
+}
+.btns > li > a{
+    margin: 4px;
+}
