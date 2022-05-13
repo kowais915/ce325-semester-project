@@ -1,12 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./keys')
-const app = express();
+
+const authRoutes = require('./routes/authRoutes');
 const facebookAuth = require('./config/passportFacebook');
 const googleAuth = require('./config/passportGoogle.js');
-const authRoutes = require('./routes/authRoutes');
+
 const profileRoutes = require('./routes/profileAuths');
+const passport = require('passport');
 const PORT = 3000;
+
+const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -28,12 +32,14 @@ app.get("/", (req, res)=>{
 })
 
 //Auth routes
-app.get('/auth', authRoutes );
+// app.get('/auth/google', passport.authenticate('google', {
+//     scope: ['profile']
+// }) );
 
-
+app.use("/auth", authRoutes);
 
 //profile routes
-app.get('/profile', profileRoutes);
+app.use("/profile", profileRoutes);
 
 
 //404

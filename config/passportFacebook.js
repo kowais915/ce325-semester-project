@@ -11,9 +11,7 @@ passport.serializeUser((user, done) => {
 
 
 // deserialize users
-passport.deserializeUser((id, done)=>{
-    
-})
+
 
 
 passport.use(new FacebookStrategy(

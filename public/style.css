@@ -7,9 +7,11 @@
 }
 
 #card-container{
+
     margin-top: 70px;
     display: flex;
     justify-content: center;
+    
 }
 .card{
     text-align: center;
@@ -19,3 +21,5 @@
 .card > div > a{
     margin: 5px;
 }
+
+/* motto width */
