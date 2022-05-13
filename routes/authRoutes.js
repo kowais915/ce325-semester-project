@@ -9,8 +9,6 @@ routes.get('/google', passport.authenticate('google', {
 }));
 
 
-routes.get('/facebook', passport.authenticate('facebook', {
-    scope: ['profile']
-}));
+routes.get('/facebook', passport.authenticate('facebook'));
 
 module.exports = routes;
