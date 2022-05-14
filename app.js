@@ -6,6 +6,9 @@ const facebookAuth = require('./config/passportFacebook');
 const googleAuth = require('./config/passportGoogle.js');
 const profileRoutes = require('./routes/profileAuths');
 const passport = require('passport');
+const UserG = require('./models/userModel_g');
+const UserFb = require('./models/userModel_fb');
+const cookieSession = require('cookie-session');
 const PORT = 3000;
 
 
@@ -17,6 +20,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 
+
+
 // database connection
 mongoose.connect(keys.mongodb.uri).then(()=>{
     console.log("Connected to the database");
@@ -26,6 +31,15 @@ mongoose.connect(keys.mongodb.uri).then(()=>{
     });
 }).catch("Error connecting to the database");
 
+//cookie setup
+app.use(cookieSession({
+
+    maxAge: 24*60*60*1000,
+    keys:keys.key
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 //routes
