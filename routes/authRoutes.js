@@ -31,6 +31,10 @@ routes.get('/redirect_fb', passport.authenticate('facebook'), (req, res)=>{
 });
 
 
-
+//logout
+routes.get("/logout", (req, res)=>{
+    req.logOut();
+    res.redirect("/");
+})
 
 module.exports = routes;
