@@ -32,7 +32,7 @@ routes.get('/redirect_fb', passport.authenticate('facebook'), (req, res)=>{
 
 
 //logout
-routes.get("/logout", (req, res)=>{
+routes.get("/logouts", (req, res)=>{
     req.logOut();
     res.redirect("/");
 })

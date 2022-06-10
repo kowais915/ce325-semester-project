@@ -9,6 +9,8 @@ const passport = require('passport');
 const UserG = require('./models/userModel_g');
 const UserFb = require('./models/userModel_fb');
 const cookieSession = require('cookie-session');
+const { redirect } = require('express/lib/response');
+const createRoutes = require('./routes/createRoutes')
 const PORT = 3000;
 
 
@@ -44,20 +46,32 @@ app.use(passport.session());
 
 //routes
 app.get("/", (req, res)=>{
-    res.render('login');
+    res.render('login', {user: req.user});
 })
 
+
+//home
+app.get("/home", (req, res)=>{
+    res.render("home", {user: req.user});
+})
 //Auth routes
 
 app.use("/auth", authRoutes);
 
 
+
+
+
+
 //profile routes
 app.use("/profile", profileRoutes);
+
+//create routes
+app.use("/create", createRoutes);
+
 
 
 //404
 app.use((req, res)=>{
     res.status(404).send("404 - Wrong Page");
 });
-

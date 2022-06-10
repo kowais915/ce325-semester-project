@@ -7,18 +7,20 @@ const { redirect } = require('express/lib/response');
 
 
 
-
 const authCheck = (req, res, next)=>{
     if(!req.user){
-        res.redirect("/");
+        res.redirect('/');
+        
     }else{
         next();
+        
     }
 }
-
+//create
 routes.get("/", authCheck, (req, res)=>{
-    res.render("profile", {user: req.user});
-});
+    
+    res.render("create", {user: req.user});
+})
 
 
 module.exports = routes;
