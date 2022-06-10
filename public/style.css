@@ -57,3 +57,9 @@ body > div.footer > footer > p{
     padding: 10px;
     margin-top: 5px;
 }
+
+/* profile ejs */
+
+.profile{
+     background-color: black;
+}

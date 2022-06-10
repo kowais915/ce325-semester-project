@@ -13,6 +13,41 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
     <title>Create</title>
+    <style>
+      .form{
+        width: 700px;
+        height: 300px;
+        text-align: center;
+        position: relative;
+      }
+      textarea{
+        text-align: center;
+        padding: 700px;
+        height: 1200px;
+      }
+
+
+      #editor{
+        text-align: center;
+        margin-left: 250px;
+      }
+
+      .textarea{
+    
+        text-align: center;
+        margin-left: 40px;
+        width: 600px;
+        margin: 0 auto;
+        position: absolute;
+        margin-left: 400px;
+        margin-top: 130px;
+        height: 200px;
+      }
+
+      body > div.form > form > div > div > div.ck.ck-editor__main > div > p{
+        height: 300px;
+      }
+    </style>
 </head>
 <body>
 
@@ -31,9 +66,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/profile/create">Create</a>
-              </li>
+            
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown link
@@ -73,23 +106,27 @@
 
     <!-- navbar ends -->
     
-    <form action="" method="POST">
+<div class="form">
+  <form action="" method="POST">
+    <div class="textarea">
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" value="subject">
 
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" value="subject">
+    <!-- text area starts -->
 
-        <!-- text area starts -->
-        <textarea id="editor" name="note" id="note" cols="30" rows="10">
-
-
-
-        </textarea>
-
-        <!-- text area ends -->
+  <textarea id="editor" name="note" id="note" cols="60" rows="300" style="height: 700px;">
 
 
 
-    </form>
+  </textarea>
+  <button class="btn btn-primary" style="margin-top: 5px;">Submit</button>
+</div>
+
+    <!-- text area ends -->
+
+
+</form>
+</div>
 
 
     <!-- ckeditor script -->

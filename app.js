@@ -67,8 +67,10 @@ app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 
 //create routes
-app.use("/create", createRoutes);
-
+// app.use("/create", createRoutes);
+app.get("/create", (req, res)=>{
+    res.render("create", {user: req.user});
+})
 
 
 //404
