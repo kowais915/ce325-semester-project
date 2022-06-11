@@ -11,6 +11,8 @@ const UserFb = require('./models/userModel_fb');
 const cookieSession = require('cookie-session');
 const { redirect } = require('express/lib/response');
 const createRoutes = require('./routes/createRoutes')
+const bodyParser = require('body-parser');
+const Note = require('./models/userNote');
 const PORT = 3000;
 
 
@@ -20,7 +22,7 @@ const app = express();
 // middleware
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
@@ -46,18 +48,33 @@ app.use(passport.session());
 
 //routes
 app.get("/", (req, res)=>{
-    res.render('login', {user: req.user});
+ res.render('home', {user: res.user})
 })
 
 
 //home
-app.get("/home", (req, res)=>{
-    res.render("home", {user: req.user});
+app.get("/login", (req, res)=>{
+    res.render("login", {user: req.user});
 })
 //Auth routes
 
 app.use("/auth", authRoutes);
 
+// post request
+app.post("/", (req, res)=>{
+    console.log(req.body)
+    const note = new Note(req.body);
+    note.save()
+    .then(val=>{
+        console.log("saved to the database");
+        res.redirect('/')
+    }).catch(err=>{
+        console.log("Wew there was an error.")
+    })
+    
+    
+    
+});
 
 
 

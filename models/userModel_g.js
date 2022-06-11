@@ -1,3 +1,4 @@
+const Note = require('./userNote')
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -25,4 +26,6 @@ const userSchemaG = new Schema({
 )
 
 const User_g = mongoose.model('UserGoogle', userSchemaG);
+
 module.exports = User_g;
+

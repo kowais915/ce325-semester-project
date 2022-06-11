@@ -63,3 +63,7 @@ body > div.footer > footer > p{
 .profile{
      background-color: black;
 }
+
+div.container{
+    margin-top: 35px;
+}

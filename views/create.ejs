@@ -24,6 +24,8 @@
         text-align: center;
         padding: 700px;
         height: 1200px;
+        width: 700px;
+        height: 300px;
       }
 
 
@@ -44,8 +46,8 @@
         height: 200px;
       }
 
-      body > div.form > form > div > div > div.ck.ck-editor__main > div > p{
-        height: 300px;
+      body > div.form.textarea > form > div > div.ck.ck-editor__main > div > p{
+        height: 10px;
       }
     </style>
 </head>
@@ -106,27 +108,25 @@
 
     <!-- navbar ends -->
     
-<div class="form">
-  <form action="" method="POST">
-    <div class="textarea">
+<div class="form textarea">
+  <form action="/" method="POST">
+    
     <label for="subject">Subject</label>
-    <input type="text" id="subject" value="subject">
+    <input type="text" id="subject" name="subject">
 
     <!-- text area starts -->
+    <label for="note"></label>
+    <textarea id="editor" name="note" value="note" id="note" cols="60" rows="300" style="height: 700px;">
 
-  <textarea id="editor" name="note" id="note" cols="60" rows="300" style="height: 700px;">
+    </textarea>
+    <button class="btn btn-primary" style="margin-top: 5px;">Submit</button>
 
-
-
-  </textarea>
-  <button class="btn btn-primary" style="margin-top: 5px;">Submit</button>
-</div>
 
     <!-- text area ends -->
+  </form>
 
-
-</form>
 </div>
+
 
 
     <!-- ckeditor script -->
