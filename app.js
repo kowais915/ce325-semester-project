@@ -48,7 +48,12 @@ app.use(passport.session());
 
 //routes
 app.get("/", (req, res)=>{
- res.render('home', {user: res.user})
+
+
+Note.find({}, (err, data)=>{
+    res.render('home', {notes: data, user: req.user });
+    console.log(data);
+})
 })
 
 
