@@ -41,8 +41,8 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>{
 //     keys:keys.key
 // }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 
 //routes
