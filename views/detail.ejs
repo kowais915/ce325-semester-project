@@ -12,12 +12,38 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Login </title>
+
+    <style>
+      
+element.style {
+}
+body > div.footer > footer > p {
+    margin-top: 330px;
+}
+        body{
+           
+            position: absolute;
+        }
+        footer{
+           
+            margin-bottom: 0px;
+        }
+        .detail{
+            background-color: white;
+            color: black;
+            margin: 40px;
+            padding: 40px;
+        }
+        .detail > h3{
+            text-align: center;
+        }
+    </style>
+    <title>Home</title>
 </head>
 <body>
-
     <!-- navbar starts -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <!-- navbar starts -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Nottindom</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,9 +51,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">Notes</a>
-              </li>
+              
               <li class="nav-item">
                 <a class="nav-link" href="#">Features</a>
               </li>
@@ -43,26 +67,11 @@
                   <li><a class="dropdown-item" href="#">Another action</a></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
               </li>
-              <div class="btns">
-                  <!-- buttons -->
-
-                  <% if(!user){ %>
-                   
-                  <%}else{ %>
-                    <li class="nav-item">
-                
-                      <a href="" class="href btn btn-primary">Login</a>
-              
-                  </li>
-                  
-                  <li class="nav-item">
-          
-                    <a href="" class="href btn btn-primary">Logout</a>
             
-                  </li>
-                  <%}%>
-              </div>
             </ul>
           </div>
         </div>
@@ -71,26 +80,26 @@
       </nav>
     <!-- navbar ends -->
 
+      
 
 
-    <!-- login cards -->
-<div id="card-container">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h2 class="card-title">Nottindom</h2>
-        <p class="motto">Notes in one place, for one place.</p>
-        </div>
-        <div class="google">
-            <a href="/auth/google" class="btn btn-danger">Sign up with Google+</a>
-        </div>
-        <div class="fb">
-            <a href="/auth/facebook" class="href btn btn-primary"> Sign up with Facebook</a>
-        </div>
     </div>
+  </div>
+
+
+
+  <div class="detail">
+   <h3><%=data.subject%></h3>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos eos labore veniam nam id, beatae voluptatem, culpa fuga iure ipsam accusantium provident nihil quod obcaecati placeat soluta expedita assumenda suscipit perferendis ea? Odio ad maiores consectetur molestias doloribus distinctio non.</p>
+
+  </div>
+
+    <!-- footer starts -->
+<div class = "footer">
+  <footer>
+    <p>Coded with <i class="fa fa-heart"></i> <3 at R111, H5, GIKI</p>
+  </footer>
 </div>
-    
-
-
-
+<!-- footer ends -->
 </body>
 </html>

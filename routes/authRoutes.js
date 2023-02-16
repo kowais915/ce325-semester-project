@@ -15,9 +15,6 @@ routes.get('/redirect', passport.authenticate('google'), (req, res)=>{
     })
 });
 
-
-
-
 // facebook routes
 
 routes.get('/facebook', passport.authenticate('facebook', {

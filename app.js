@@ -94,6 +94,14 @@ app.get("/create", (req, res)=>{
     res.render("create", {user: req.user});
 })
 
+app.get("/post:id", (req, res)=>{
+ Note.findById(req.params.id).then(resu=>{
+    console.log(resu);
+    res.render('detail', {data: resu});
+ }).catch(err=>{
+    console.log(err);
+ })
+})
 
 //404
 app.use((req, res)=>{
