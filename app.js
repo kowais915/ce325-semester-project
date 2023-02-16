@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const keys = require('./keys')
+// const keys = require('./keys')
 const authRoutes = require('./routes/authRoutes');
 const facebookAuth = require('./config/passportFacebook');
 const googleAuth = require('./config/passportGoogle.js');
@@ -14,7 +14,8 @@ const createRoutes = require('./routes/createRoutes')
 const bodyParser = require('body-parser');
 const Note = require('./models/userNote');
 const PORT = 3000;
-
+require('dotenv').config();
+const apikey = process.env.API_KEY;
 
 // express app
 const app = express();
@@ -27,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // database connection
-mongoose.connect(keys.mongodb.uri).then(()=>{
+mongoose.connect(apikey).then(()=>{
     console.log("Connected to the database");
     
     app.listen(PORT, ()=>{
@@ -36,11 +37,11 @@ mongoose.connect(keys.mongodb.uri).then(()=>{
 }).catch("Error connecting to the database");
 
 //cookie setup
-app.use(cookieSession({
+// app.use(cookieSession({
 
-    maxAge: 24*60*60*1000,
-    keys:keys.key
-}));
+//     maxAge: 24*60*60*1000,
+//     keys:keys.key
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());
