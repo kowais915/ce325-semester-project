@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const keys = require('./keys')
+const keys = require('./keys')
 const authRoutes = require('./routes/authRoutes');
+const facebookAuth = require('./config/passportFacebook');
+const googleAuth = require('./config/passportGoogle.js');
 const profileRoutes = require('./routes/profileAuths');
 const passport = require('passport');
 const UserG = require('./models/userModel_g');
@@ -12,7 +14,6 @@ const createRoutes = require('./routes/createRoutes')
 const bodyParser = require('body-parser');
 const Note = require('./models/userNote');
 const PORT = 3000;
-require('dotenv').config();
 
 
 // express app
@@ -26,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // database connection
-mongoose.connect(process.env.MONGODB_URI).then(()=>{
+mongoose.connect(keys.mongodb.uri).then(()=>{
     console.log("Connected to the database");
     
     app.listen(PORT, ()=>{
@@ -35,14 +36,14 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>{
 }).catch("Error connecting to the database");
 
 //cookie setup
-// app.use(cookieSession({
+app.use(cookieSession({
 
-//     maxAge: 24*60*60*1000,
-//     keys:keys.key
-// }));
+    maxAge: 24*60*60*1000,
+    keys:keys.key
+}));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 //routes
