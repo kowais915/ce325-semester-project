@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // database connection
-mongoose.connect(process.env.API_KEY).then(()=>{
+mongoose.connect(process.env.MONGODB_URI).then(()=>{
     console.log("Connected to the database");
     
     app.listen(PORT, ()=>{
