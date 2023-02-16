@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const Note = require('./models/userNote');
 const PORT = 3000;
 require('dotenv').config();
-const apikey = process.env.API_KEY;
+
 
 // express app
 const app = express();
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // database connection
-mongoose.connect(apikey).then(()=>{
+mongoose.connect(process.env.API_KEY).then(()=>{
     console.log("Connected to the database");
     
     app.listen(PORT, ()=>{
