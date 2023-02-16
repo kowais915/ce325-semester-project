@@ -1,10 +1,13 @@
 {
+  "hompage":"http://kowais915.github.io/ce325-semester-project",
   "name": "nottindom",
   "version": "1.0.0",
   "description": "A semester-end project for the class of CE-325 ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build", 
+    "deploy":"gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,8 @@
     "passport": "^0.5.2",
     "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
